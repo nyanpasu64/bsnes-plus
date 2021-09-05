@@ -352,12 +352,12 @@ void DSP::reset_common() {
   // I have no clue what these numbers come from. Maybe it's uninitialized memory.
   // And I don't know if the real hardware timers decrease or increase.
   state.counter5 = 107;
-  state.phase5 = 1;
+  state.phase5 = 2;
 
-  state.counter1 = 0;
+  state.counter1 = 1;
 
   state.counter3 = 346;
-  state.phase3 = 2;
+  state.phase3 = 3;
 }
 
 void DSP::reset() {
