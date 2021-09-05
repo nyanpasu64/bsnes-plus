@@ -20,8 +20,8 @@ objdir := obj/$(profile)
 # compiler
 c       := $(compiler) -xc -std=gnu99
 cpp     := $(compiler) -std=gnu++0x
-flags   := -I. -I$(common) -I$(snes)
-link    :=
+flags   := -I. -I$(common) -I$(snes) $(CXXFLAGS)
+link    := $(LDFLAGS)
 objects :=
 
 # build version
@@ -29,17 +29,6 @@ ifeq ($(version),)
   version := 05
 else
   flags += -DBSNES_VERSION=\"$(version)\"
-endif
-
-ifeq ($(DEBUG), 1)
-  flags += -O0 -g
-else
-  flags += -O3 -fomit-frame-pointer
-  ifeq ($(platform),osx)
-    # -s is deprecated as of Apple LLVM 7.0, and using it breaks linking with some versions
-  else
-    link += -s
-  endif
 endif
 
 # comment this line to enable asserts
