@@ -695,7 +695,7 @@ void Debugger::frameTick() {
   unsigned frame = SNES::cpu.framecounter();
   if (frameCounter == frame) return;
 
-  if (frame < frameCounter) {
+  if (frame % 5 == 0) {
     autoUpdate();
   } else {
     // update memory editor every time since once per second isn't very useful
