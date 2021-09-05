@@ -23,18 +23,18 @@ const uint16 DSP::counter_rate[32] = {
 //counters do not appear to be aligned at zero for all rates
 
 const uint16 DSP::counter_offset[32] = {
-    0, 0, 1040,
-  536, 0, 1040,
-  536, 0, 1040,
-  536, 0, 1040,
-  536, 0, 1040,
-  536, 0, 1040,
-  536, 0, 1040,
-  536, 0, 1040,
-  536, 0, 1040,
-  536, 0, 1040,
-       0,
-       0,
+   0, 0, 16,
+  24, 0, 16,
+  24, 0, 16,
+  24, 0, 16,
+  24, 0, 16,
+  24, 0, 16,
+  24, 0, 16,
+  24, 0, 16,
+  24, 0, 16,
+  24, 0, 16,
+      0,
+      0,
 };
 
 inline void DSP::counter_tick() {
