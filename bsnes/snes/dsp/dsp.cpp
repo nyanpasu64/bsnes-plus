@@ -299,7 +299,6 @@ void DSP::power() {
   state.every_other_sample = false;
   state.kon = 0;
   state.noise = 0;
-  state.counter = 0;
   state.echo_offset = 0;
   state.echo_length = 0;
   state.new_kon = 0;
@@ -349,7 +348,16 @@ void DSP::reset_common() {
   state.echo_hist_pos      = 0;
   state.every_other_sample = 1;
   state.echo_offset        = 0;
-  state.counter            = 0;
+
+  // I have no clue what these numbers come from. Maybe it's uninitialized memory.
+  // And I don't know if the real hardware timers decrease or increase.
+  state.counter5 = 536 / 5;
+  state.phase5 = 536 % 5;
+
+  state.counter1 = 0;
+
+  state.counter3 = 1040 / 3;
+  state.phase3 = 1040 % 3;
 }
 
 void DSP::reset() {
