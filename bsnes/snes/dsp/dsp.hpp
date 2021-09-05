@@ -69,7 +69,13 @@ private:
     bool every_other_sample;  //toggles every sample
     int kon;                  //KON value when last checked
     int noise;
-    int counter;
+    uint8 phase5;
+    uint8 phase3;
+
+    uint16 counter5;
+    uint16 counter1;
+    uint16 counter3;
+
     int echo_offset;          //offset from ESA in echo buffer
     int echo_length;          //number of bytes that echo_offset will stop at
 
@@ -131,7 +137,6 @@ private:
   int gaussian_interpolate(const voice_t &v);
 
   //counter
-  enum { counter_range = 2048 * 5 * 3 };  //30720 (0x7800)
   static const uint16 counter_rate[32];
   static const uint16 counter_offset[32];
   void counter_tick();

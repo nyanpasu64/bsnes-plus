@@ -15,7 +15,11 @@ void DSP::serialize(serializer &s) {
   s.integer(state.every_other_sample);
   s.integer(state.kon);
   s.integer(state.noise);
-  s.integer(state.counter);
+  s.integer(state.phase5);
+  s.integer(state.phase3);
+  s.integer(state.counter5);
+  s.integer(state.counter1);
+  s.integer(state.counter3);
   s.integer(state.echo_offset);
   s.integer(state.echo_length);
 
